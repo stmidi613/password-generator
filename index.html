@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Password</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
+
 <body>
-    <h1>Random Password Generator</h1>
+    
+    <h1 id="title">Random Password Generator</h1>
     
     <div>
-        <h2>Number of Characters</h2>
-        <button type="button" id="AlphaNumBut" onclick="generateAlphaNum()">Submit</button>
-        <input type="text" name="numberOfChar" size="20" value="12">
+        <h2 id="number">Number of Characters (Number must be between 1 and 26)</h2>
+            <form>
+                <label for="pwSize">*Please remember to click the submit button.*</label><br>
+                <button type="button" id="numButton" onclick="updateNumOfChar()">Submit</button>
+                <input type="number" id="pwSize" name="pwSize" size="3"
+                min="1" max="26" value="1">
+            </form>
     </div>
-
+    
     <div>
         <h2>AlphaNumeric Only</h2>
-        <button type="button">Generate Password!</button>
-        <input type="text" name="password" id="password" size="20">
+        <button type="button" onclick="generateAlphaNum()">Generate Password!</button>
+        <input type="text" name="password" size="30" id="password">
     </div>
     
     <div>
         <h2>AlphaNumeric and Special Characters (Includes $!@&+?*/)</h2>
-        <button type="button">Generate Password!</button>
-        <input type="text" name="specCharPassword" size="20">
+        <button type="button" onclick="generateSpecChar()">Generate Password!</button>
+        <input type="text" name="specCharPassword" size="30" id="specCharPassword">
     </div>
+    
+    <script src="script.js"></script>
 
 </body>
 </html>
