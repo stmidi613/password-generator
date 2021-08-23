@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Random Password Generator</h1>
+    
+    <div>
+        <h2>Number of Characters</h2>
+        <button type="button" id="AlphaNumBut" onclick="generateAlphaNum()">Submit</button>
+        <input type="text" name="numberOfChar" size="20" value="12">
+    </div>
+
+    <div>
+        <h2>AlphaNumeric Only</h2>
+        <button type="button">Generate Password!</button>
+        <input type="text" name="password" id="password" size="20">
+    </div>
+    
+    <div>
+        <h2>AlphaNumeric and Special Characters (Includes $!@&+?*/)</h2>
+        <button type="button">Generate Password!</button>
+        <input type="text" name="specCharPassword" size="20">
+    </div>
+
+</body>
+</html>
