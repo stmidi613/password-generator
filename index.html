@@ -12,33 +12,34 @@
     
     <h1 id="title">Random Password Generator</h1>
     
-    <div>
+    <section>
         <h2 id="number">Number of Characters (Number must be between 1 and 26)</h2>
             <form>
                 <label for="pwSize">*Please remember to click the submit button.*</label><br>
                 <button type="button" id="numButton" onclick="updateNumOfChar()">Submit</button>
                 <input type="number" id="pwSize" name="pwSize" size="3"
-                min="1" max="26" value="1">
+                min="1" max="26" value="12">
+                <span id="rangeError" hidden="true">Number must be between 1 and 26.  Please reload the page.</span>
             </form>
-    </div>
+    </section>
     
-    <div>
+    <section>
         <h2>Numeric</h2>
         <button type="button" onclick="generateNum()">Generate Password!</button>
         <input type="text" name="numPassword" size="30" id="numPassword">
-    </div>
+    </section>
 
-    <div>
+    <section>
         <h2>AlphaNumeric</h2>
         <button type="button" onclick="generateAlphaNum()">Generate Password!</button>
         <input type="text" name="password" size="30" id="password">
-    </div>
+    </section>
     
-    <div>
-        <h2>AlphaNumeric and Special Characters (Includes $!@&+?*/)</h2>
+    <section>
+        <h2>AlphaNumeric and Special Characters (Includes $!@&+?*)</h2>
         <button type="button" onclick="generateSpecChar()">Generate Password!</button>
         <input type="text" name="specCharPassword" size="30" id="specCharPassword">
-    </div>
+    </section>
     
     <script src="script.js"></script>
 

@@ -1,5 +1,5 @@
 const AlphaNum = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
-const AlphaNumSpecChar = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890$!@&+?*/";
+const AlphaNumSpecChar = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890$!@&+?*";
 const numOnly = "0123456789";
 
 var numOfChar = Number(document.getElementById("pwSize").value);
@@ -12,25 +12,26 @@ function updateNumOfChar(){
     }else{
         numOfChar = 0;
         arr = [...Array(numOfChar).keys()];
+        document.getElementById("rangeError").removeAttribute('hidden');
     }
     return arr;
 }
 
 function generateNum(){
     document.getElementById("numPassword").value = 
-    arr.map(num => num = numOnly[Math.floor(Math.random() * 9)]).join("");
+    arr.map(num => num = numOnly[Math.floor(Math.random() * 10)]).join("");
 }
 
 function generateAlphaNum(){
     document.getElementById("password").value = 
-    arr.map(num => num = AlphaNum[Math.floor(Math.random() * 61)]).join("");
+    arr.map(num => num = AlphaNum[Math.floor(Math.random() * 62)]).join("");
 }
 
 function generateSpecChar(){
     document.getElementById("specCharPassword").value =
     arr.map((num, index) => index !== 0 ?
     num = AlphaNumSpecChar[Math.floor(Math.random() * 69)] :
-    num = AlphaNum[Math.floor(Math.random() * 61)]).join("");
+    num = AlphaNum[Math.floor(Math.random() * 62)]).join("");
 }
 
 console.log(document.getElementById("pwSize").value)
