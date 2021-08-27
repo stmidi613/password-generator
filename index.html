@@ -14,12 +14,12 @@
     
     <section>
         <h2 id="number">Number of Characters (Number must be between 1 and 26)</h2>
-            <form>
-                <label for="pwSize">*Please remember to click the submit button.*</label><br>
-                <button type="button" id="numButton" onclick="updateNumOfChar()">Submit</button>
-                <input type="number" id="pwSize" name="pwSize" size="3"
+            <form id="form">
+                <label for="pwSize">Please enter a valid number.</label><br>
+                <button type="button" id="numButton" onclick="resetFunction();">Reset</button>
+                <input type="number" id="pwSize" name="pwSize" size="3" onchange="updateNumOfChar()"
                 min="1" max="26" value="12">
-                <span id="rangeError" hidden="true">Number must be between 1 and 26.  Please reload the page.</span>
+                <span id="rangeError">Number must be between 1 and 26.  Please reload the page.</span>
             </form>
     </section>
     
