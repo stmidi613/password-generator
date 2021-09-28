@@ -13,7 +13,7 @@
     <h1 id="title">Random Password Generator</h1>
     
     <section>
-        <h2 id="number">Number of Characters (Number must be between 1 and 26)</h2>
+        <h2 id="number">Length of Password (Number must be between 1 and 26)</h2>
             <form id="form">
                 <label for="pwSize">Please enter a valid number.</label><br>
                 <button type="button" id="numButton" onclick="resetFunction();">Reset</button>
@@ -36,7 +36,7 @@
     </section>
     
     <section>
-        <h2>AlphaNumeric and Special Characters (Includes $!@&+?*)</h2>
+        <h2>AlphaNumeric and Special Characters (Includes $!@+?*)</h2>
         <button type="button" onclick="generateSpecChar()">Generate Password!</button>
         <input type="text" name="specCharPassword" size="30" id="specCharPassword">
     </section>

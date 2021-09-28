@@ -1,5 +1,6 @@
 const AlphaNum = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
 const AlphaNumSpecChar = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890$!@&+?*";
+const SpecChar = "$!@%#^:+?*"
 const numOnly = "0123456789";
 
 var numOfChar = Number(document.getElementById("pwSize").value);
@@ -38,8 +39,10 @@ function generateAlphaNum(){
 function generateSpecChar(){
     updateNumOfChar();
     document.getElementById("specCharPassword").value =
-    arr.map((num, index) => index !== 0 ?
-    num = AlphaNumSpecChar[Math.floor(Math.random() * 69)] :
+    arr.map((num, index) => index + 1 === arr.length ?
+    num = SpecChar[Math.floor(Math.random() * 11)] :
+    index !== 0 ?
+    num = AlphaNumSpecChar[Math.floor(Math.random() * 69)] : 
     num = AlphaNum[Math.floor(Math.random() * 62)]).join("");
 }
 
