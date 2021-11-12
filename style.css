@@ -1,7 +1,13 @@
+body{
+    background-color: wheat;
+}
+
 #title{
     color: blue;
+    text-align: center;
 }
 
 #rangeError{
     display: none;
+    color: red;
 }
