@@ -7,7 +7,22 @@ body{
     text-align: center;
 }
 
+#flex-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: max-content;
+}
+
 #rangeError{
+    font-size: 16px;
     display: none;
     color: red;
+}
+
+.section{
+    margin-top: 50px;
+    line-height: 5px;
 }
