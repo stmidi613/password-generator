@@ -22,6 +22,10 @@ body{
     color: red;
 }
 
+#checkBox{
+    margin-top: 35px;
+}
+
 .section{
     margin-top: 50px;
     line-height: 5px;
