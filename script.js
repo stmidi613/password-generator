@@ -12,7 +12,6 @@ function updateNumOfChar() {
   if (numOfChar < 27 && numOfChar > 0 && typeof numOfChar === "number") {
     numOfChar = Number(document.getElementById("pwSize").value);
     arr = [...Array(numOfChar).keys()];
-    return arr;
   } else {
     numOfChar = 0;
     arr = [...Array(numOfChar).keys()];
