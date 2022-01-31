@@ -1,7 +1,7 @@
 const AlphaNumSpecChar =
   "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890$!@%#^:+?*";
 const NoConfusingChar =
-  "aAbBcCdDeEfFgGhHijJkKLmMnNopPqQrRsStTuUvVwWxXyYzZ123456789$!@%#^:+?*";
+  "aAbBcCdDeEfFgGhHijJkKLmMnNopPqQrRsStTuUvVwWxXyYzZ123456789$!@%#^:+?**";
 const SpecChar = "$!@%#^:+?*";
 const numOnly = "0123456789";
 
@@ -46,7 +46,7 @@ function generateAlphaNum(str) {
 
 //This function just insures at least one number is in the Special Characters Password
 function insertNum(string) {
-  return string.match(/\d/) == null && string.length > 2
+  return /\d/.test(string) == false && string.length > 2
     ? string.replace(
         string[string.length - 2],
         numOnly[Math.floor(Math.random() * 10)]
@@ -67,12 +67,14 @@ function generateSpecChar(str) {
       index + 1 === arr.length
         ? (num = SpecChar[Math.floor(Math.random() * 10)])
         : index !== 0
-        ? (num = str[Math.floor(Math.random() * 72)])
-        : (num = str[Math.floor(Math.random() * 52)])
+        ? (num = str[Math.floor(Math.random() * str.length)])
+        : (num = str[Math.floor(Math.random() * (str.length - 20))])
     )
     .join("");
 
-  insertNum(string);
-
-  document.getElementById("specCharPassword").value = string;
+  document.getElementById("specCharPassword").value = insertNum(string);
 }
+
+console.log(NoConfusingChar.length);
+console.log(AlphaNumSpecChar.length);
+
